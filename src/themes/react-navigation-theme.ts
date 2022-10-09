@@ -6,7 +6,7 @@ export const reactNavigationTheme = {
   ...DefaultTheme,
   colors: {
     ...DefaultTheme.colors,
-    primary: COLORS.primary[500],
-    background: COLORS.white,
+    primary: COLORS.primary[700],
+    background: COLORS.background,
   },
 }

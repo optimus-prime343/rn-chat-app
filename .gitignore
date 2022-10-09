@@ -65,3 +65,6 @@ buck-out/
 
 .env
 google-services.json
+
+#Jest
+.jest/
