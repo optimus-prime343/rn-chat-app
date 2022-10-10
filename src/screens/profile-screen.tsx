@@ -10,7 +10,7 @@ const ProfileScreen = () => {
   const handleLogout = () => auth().signOut()
 
   return (
-    <Box p="4">
+    <Box p="2">
       <VStack space="md" alignItems="center">
         <Avatar
           width={120}

@@ -35,7 +35,7 @@ const SignupScreen = () => {
   )
 
   return (
-    <Flex flex={1} p="4" justifyContent="center">
+    <Flex flex={1} p="2" justifyContent="center">
       <Heading mb="2">Sign up</Heading>
       <Text color="muted.400" mb="6">
         Create an account here

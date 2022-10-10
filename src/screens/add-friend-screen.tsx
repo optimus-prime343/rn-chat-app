@@ -3,7 +3,7 @@ import React from 'react'
 
 const AddFriendScreen = () => {
   return (
-    <Box p="4">
+    <Box p="2">
       <Flex direction="row" alignItems="center">
         <Input flex={1} mr="2" placeholder="Search for a friend" />
         <Button>Search</Button>

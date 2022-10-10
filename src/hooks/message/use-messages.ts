@@ -1,5 +1,6 @@
 /* eslint-disable no-extra-semi */
 import firestore from '@react-native-firebase/firestore'
+import { compareAsc } from 'date-fns'
 import { useEffect, useState } from 'react'
 
 import { MESSAGES_COLLECTION } from '../../constants'
@@ -8,6 +9,11 @@ import { Message } from '../../types/message'
 export const useMessages = () => {
   const [messages, setMessages] = useState<Message[]>([])
 
+  const sortNewestFirst = (messagesToSort: Message[]) => {
+    return [...messagesToSort].sort((a, b) =>
+      compareAsc(new Date(a.createdAt), new Date(b.createdAt)),
+    )
+  }
   //for fetching messages from firebase
   useEffect(() => {
     ;(async () => {
@@ -18,7 +24,8 @@ export const useMessages = () => {
         ...doc.data(),
         id: doc.id,
       }))
-      setMessages(dbMessages)
+      const sortedMessages = sortNewestFirst(dbMessages)
+      setMessages(sortedMessages)
     })()
   }, [])
 
@@ -31,7 +38,8 @@ export const useMessages = () => {
           ...(doc.data() as Message),
           id: doc.id,
         }))
-        setMessages(dbMessages)
+        const sortedMessages = sortNewestFirst(dbMessages)
+        setMessages(sortedMessages)
       })
     return () => subscriber()
   }, [])

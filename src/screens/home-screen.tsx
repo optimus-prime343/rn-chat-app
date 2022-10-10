@@ -8,7 +8,7 @@ import { useMessages } from '../hooks/message'
 const HomeScreen = () => {
   const messages = useMessages()
   return (
-    <Box p="4">
+    <Box p="2" flex={1}>
       <MessageList messages={messages} />
       <CreateMessageInput />
     </Box>

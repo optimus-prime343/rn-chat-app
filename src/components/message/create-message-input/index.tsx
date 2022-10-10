@@ -28,7 +28,6 @@ export const CreateMessageInput = () => {
   }
   return (
     <Input
-      marginTop="auto"
       value={message}
       onChangeText={setMessage}
       placeholder="Send message"
