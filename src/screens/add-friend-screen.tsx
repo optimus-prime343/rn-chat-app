@@ -1,11 +1,14 @@
+import { Box, Button, Flex, Input } from 'native-base'
 import React from 'react'
-import { Text, View } from 'react-native'
 
 const AddFriendScreen = () => {
   return (
-    <View>
-      <Text>AddFriendScreen</Text>
-    </View>
+    <Box p="4">
+      <Flex direction="row" alignItems="center">
+        <Input flex={1} mr="2" placeholder="Search for a friend" />
+        <Button>Search</Button>
+      </Flex>
+    </Box>
   )
 }
 

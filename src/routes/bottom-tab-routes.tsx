@@ -1,11 +1,10 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import React from 'react'
-import Icon from 'react-native-vector-icons/AntDesign'
+import AntDesignIcon from 'react-native-vector-icons/AntDesign'
 
 import AddFriendScreen from '../screens/add-friend-screen'
-import FriendScreen from '../screens/friends-screen'
 import HomeScreen from '../screens/home-screen'
-import SettingScreen from '../screens/setting-screen'
+import ProfileScreen from '../screens/profile-screen'
 import { RootStackParamList } from '../types'
 
 const Tab = createBottomTabNavigator<RootStackParamList>()
@@ -18,7 +17,7 @@ export const BottomTabRoutes = () => {
         component={HomeScreen}
         options={{
           tabBarIcon: ({ size, color }) => (
-            <Icon name="home" size={size} color={color} />
+            <AntDesignIcon name="home" size={size} color={color} />
           ),
         }}
       />
@@ -28,26 +27,16 @@ export const BottomTabRoutes = () => {
         options={{
           title: 'Add Friend',
           tabBarIcon: ({ size, color }) => (
-            <Icon name="adduser" color={color} size={size} />
+            <AntDesignIcon name="adduser" color={color} size={size} />
           ),
         }}
       />
       <Tab.Screen
-        name="Friends"
-        component={FriendScreen}
+        name="Profile"
+        component={ProfileScreen}
         options={{
           tabBarIcon: ({ size, color }) => (
-            <Icon name="user" size={size} color={color} />
-          ),
-        }}
-      />
-
-      <Tab.Screen
-        name="Settings"
-        component={SettingScreen}
-        options={{
-          tabBarIcon: ({ size, color }) => (
-            <Icon name="setting" size={size} color={color} />
+            <AntDesignIcon name="user" size={size} color={color} />
           ),
         }}
       />

@@ -1,17 +1,16 @@
-import auth from '@react-native-firebase/auth'
-import { Box, Button, Text } from 'native-base'
+import { Box } from 'native-base'
 import React from 'react'
 
-import { useUser } from '../hooks/auth'
+import { CreateMessageInput } from '../components/message/create-message-input'
+import { MessageList } from '../components/message/message-list'
+import { useMessages } from '../hooks/message'
 
 const HomeScreen = () => {
-  const user = useUser()
-  const handleLogout = () => auth().signOut()
-
+  const messages = useMessages()
   return (
     <Box p="4">
-      <Text mb="6">{JSON.stringify(user, null, 4)}</Text>
-      <Button onPress={handleLogout}>Logout</Button>
+      <MessageList messages={messages} />
+      <CreateMessageInput />
     </Box>
   )
 }
